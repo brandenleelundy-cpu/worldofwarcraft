@@ -17,6 +17,7 @@ const navItems = [
   { path: '/raids', label: 'Raid Strategies', icon: '&#9876;' },
   { path: '/rare-items', label: 'Rare Items', icon: '&#9830;' },
   { path: '/realms', label: 'Realm Status', icon: '&#9728;' },
+  { path: '/talents', label: 'Talents & Builds', icon: '&#9670;' },
   { path: '/tutorials', label: 'Tutorials', icon: '&#9733;' },
   { path: '/wow-token', label: 'WoW Token', icon: '&#9672;' },
   { path: '/zones', label: 'Zones', icon: '&#9675;' },

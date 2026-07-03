@@ -33,6 +33,7 @@ export default function Header({ onMenuToggle, theme, onThemeToggle }) {
           <Link to="/raids">Raids</Link>
           <Link to="/rare-items">Rare Items</Link>
           <Link to="/realms">Realm Status</Link>
+          <Link to="/talents">Talents</Link>
           <Link to="/tutorials">Tutorials</Link>
           <Link to="/wow-token">WoW Token</Link>
           <Link to="/zones">Zones</Link>

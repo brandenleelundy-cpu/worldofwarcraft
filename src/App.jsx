@@ -18,6 +18,7 @@ import RareItems from './pages/RareItems'
 import Tutorials from './pages/Tutorials'
 import Realms from './pages/Realms'
 import Dungeons from './pages/Dungeons'
+import Talents from './pages/Talents'
 
 export default function App() {
   return (
@@ -41,6 +42,7 @@ export default function App() {
         <Route path="rare-items" element={<RareItems />} />
         <Route path="tutorials" element={<Tutorials />} />
         <Route path="realms" element={<Realms />} />
+        <Route path="talents" element={<Talents />} />
       </Route>
     </Routes>
   )

@@ -6,6 +6,7 @@ const navItems = [
   { path: '/addons', label: 'Addons', icon: '&#9881;' },
   { path: '/characters', label: 'Characters', icon: '&#9824;' },
   { path: '/delves', label: 'Delves', icon: '&#9649;' },
+  { path: '/dungeons', label: 'Dungeons', icon: '&#9760;' },
   { path: '/expansions', label: 'Past Expansions', icon: '&#9775;' },
   { path: '/features', label: 'Features', icon: '&#9830;' },
   { path: '/lore', label: 'Lore', icon: '&#9733;' },

@@ -17,6 +17,7 @@ import PvP from './pages/PvP'
 import RareItems from './pages/RareItems'
 import Tutorials from './pages/Tutorials'
 import Realms from './pages/Realms'
+import Dungeons from './pages/Dungeons'
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="mythic-plus" element={<MythicPlus />} />
         <Route path="quests" element={<Quests />} />
         <Route path="delves" element={<Delves />} />
+        <Route path="dungeons" element={<Dungeons />} />
         <Route path="addons" element={<Addons />} />
         <Route path="expansions" element={<Expansions />} />
         <Route path="wow-token" element={<WoWToken />} />

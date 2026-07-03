@@ -1,0 +1,558 @@
+/* Difficulty switcher */
+
+.diffBar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.diffTabs {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.diffTab {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-xl);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.diffTab:hover {
+  border-color: var(--d-color);
+  color: var(--color-text-secondary);
+}
+
+.diffTabActive {
+  border-color: var(--d-color) !important;
+  background: color-mix(in srgb, var(--d-color) 10%, transparent);
+  color: var(--d-color) !important;
+}
+
+.diffDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--d-color);
+  flex-shrink: 0;
+}
+
+.diffDesc {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  max-width: 480px;
+}
+
+/* Stats row */
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+}
+
+.statCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.statNum {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-gold-light);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+/* Dungeon list */
+
+.dungeonList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.dungeon {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.dungeon:hover {
+  border-color: var(--color-gold-dim);
+}
+
+.dungeonOpen {
+  border-color: var(--color-gold-dim) !important;
+}
+
+.dungeonHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  color: var(--color-text-primary);
+  text-align: left;
+  transition: background var(--transition-fast);
+  gap: var(--spacing-md);
+}
+
+.dungeonHeader:hover {
+  background: var(--color-bg-card-hover);
+}
+
+.dungeonLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  min-width: 0;
+}
+
+.dungeonNum {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-gold-dim);
+  width: 32px;
+  flex-shrink: 0;
+}
+
+.dungeonName {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dungeonZone {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.dungeonRight {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex-shrink: 0;
+}
+
+.dungeonMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.dungeonBossCount {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.diffBadge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 100px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.badgeNormal {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.08);
+  border-color: rgba(74, 222, 128, 0.25);
+}
+
+.badgeHeroic {
+  color: #fb923c;
+  background: rgba(251, 146, 60, 0.08);
+  border-color: rgba(251, 146, 60, 0.25);
+}
+
+.recIlvl {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.chevron {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+}
+
+/* Dungeon body */
+
+.dungeonBody {
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-xl);
+  animation: slideDown 200ms ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.dungeonOverview {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.flavor {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--color-gold-light);
+  opacity: 0.8;
+  margin-bottom: var(--spacing-sm);
+}
+
+.descText {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.dungeonInfo {
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-self: start;
+  flex-shrink: 0;
+}
+
+.infoRow {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.infoKey {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.infoVal {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Boss list */
+
+.bossListLabel {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.bossListTitle {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-gold-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bossListHint {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.bossList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Boss accordion */
+
+.boss {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.boss:hover {
+  border-color: var(--color-gold-dim);
+}
+
+.bossOpen {
+  border-color: var(--color-gold-dim) !important;
+}
+
+.bossHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-lg);
+  color: var(--color-text-primary);
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+
+.bossHeader:hover {
+  background: var(--color-bg-card-hover);
+}
+
+.bossLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.bossDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-gold-dim);
+  flex-shrink: 0;
+}
+
+.bossName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.bossTags {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.bossTag {
+  font-size: 0.6rem;
+  padding: 1px 6px;
+  background: rgba(201, 162, 39, 0.07);
+  border: 1px solid rgba(201, 162, 39, 0.15);
+  border-radius: 100px;
+  color: var(--color-gold-light);
+  white-space: nowrap;
+}
+
+.bossChevron {
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.bossBody {
+  padding: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+  animation: slideDown 200ms ease;
+}
+
+.bossDesc {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-style: italic;
+  padding-left: var(--spacing-md);
+  border-left: 2px solid var(--color-gold-dim);
+  margin-bottom: var(--spacing-lg);
+}
+
+.bossGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+/* Abilities */
+
+.subLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-gold-light);
+  margin-bottom: var(--spacing-sm);
+}
+
+.abilities {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.ability {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-left: 2px solid transparent;
+}
+
+.abilityHeroic {
+  border-left-color: #fb923c;
+  background: rgba(251, 146, 60, 0.04);
+}
+
+.abilityHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: 2px;
+}
+
+.abilityName {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.heroicOnlyTag {
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: #fb923c;
+  background: rgba(251, 146, 60, 0.12);
+  border: 1px solid rgba(251, 146, 60, 0.25);
+}
+
+.abilityDesc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* Roles */
+
+.roles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.roleCard {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.roleHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px var(--spacing-md);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tankRole {
+  background: rgba(96, 165, 250, 0.1);
+  color: #60a5fa;
+  border-bottom: 1px solid rgba(96, 165, 250, 0.15);
+}
+
+.healerRole {
+  background: rgba(74, 222, 128, 0.1);
+  color: #4ade80;
+  border-bottom: 1px solid rgba(74, 222, 128, 0.15);
+}
+
+.dpsRole {
+  background: rgba(248, 113, 113, 0.1);
+  color: #f87171;
+  border-bottom: 1px solid rgba(248, 113, 113, 0.15);
+}
+
+.roleText {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  padding: var(--spacing-xs) var(--spacing-md) var(--spacing-sm);
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .statsRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bossGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dungeonOverview {
+    grid-template-columns: 1fr;
+  }
+
+  .dungeonInfo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dungeonMeta {
+    display: none;
+  }
+
+  .diffBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .statsRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dungeonInfo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

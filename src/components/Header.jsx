@@ -22,6 +22,7 @@ export default function Header({ onMenuToggle, theme, onThemeToggle }) {
           <Link to="/addons">Addons</Link>
           <Link to="/characters">Characters</Link>
           <Link to="/delves">Delves</Link>
+          <Link to="/dungeons">Dungeons</Link>
           <Link to="/expansions">Expansions</Link>
           <Link to="/features">Features</Link>
           <Link to="/lore">Lore</Link>

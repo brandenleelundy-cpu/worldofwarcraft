@@ -1664,3 +1664,222 @@ export const questChains = [
     ],
   },
 ]
+
+export const pvpWorldZones = [
+  {
+    name: "The Contested Reaches",
+    region: "Northern Quel'Thalas",
+    type: "Open World PvP Zone",
+    description: "Ancient forest roads separating Sin'dorei-held territory from Void-encroached ruins. Three major towers mark the path — whichever faction holds all three controls the zone and earns War Mode bonuses for the hour.",
+    objectives: [
+      { name: "Tower of the First Light", description: "Capping this tower activates a ley line that grants War Mode players 10% increased damage in the zone for 20 minutes.", icon: "&#9650;" },
+      { name: "Tower of the Amber Gate", description: "Holding this tower spawns a supply quartermaster selling crafting materials at reduced cost — exclusive to the controlling faction.", icon: "&#9650;" },
+      { name: "Tower of Dusk", description: "The deepest tower. Capping all three triggers The Midnight Assault world event: an elite Champion NPC that drops rare cosmetics.", icon: "&#9650;" },
+      { name: "Void Rift Sealing", description: "Small skirmish objectives scattered across the zone. Sealing 5 rifts awards a personal stacking damage buff that persists through death.", icon: "&#9670;" },
+    ],
+    warModeBonus: "+15% War Mode XP/gold while in the zone with War Mode active.",
+    tips: [
+      "Towers capture faster with more players present. Prioritize grouping before contesting.",
+      "The zone resets on the hour — plan pushes around the reset for maximum impact.",
+      "Void Rift objectives can be done solo and are worth completing even if your faction can't hold towers.",
+      "The Midnight Assault champion drops the Contested Reaches Tabard — the only way to obtain it.",
+    ],
+  },
+  {
+    name: "Sunwell Shore",
+    region: "Isle of Quel'Danas",
+    type: "Skirmish Battleground",
+    description: "The narrow coastline where forces clash over control of the supply lines feeding the Sunwell's defenders. A rolling skirmish zone where small groups contest landing points and supply caches.",
+    objectives: [
+      { name: "Landing Zones", description: "Three beach landing points. Hold two of three for 10 minutes to win the skirmish and claim the cache.", icon: "&#9670;" },
+      { name: "Supply Caches", description: "Appear at random inland points every 8 minutes. First faction to loot claims 50 Sunwell Shards.", icon: "&#9670;" },
+      { name: "Harbormistress Vael", description: "Elite NPC that patrols between landing zones. Killing her drops the Harbor Key, opening a bonus chest with PvP gear.", icon: "&#9876;" },
+    ],
+    warModeBonus: "+20% PvP honor in this zone with War Mode active.",
+    tips: [
+      "Focus landing zones over supply caches — the win condition is holding zones, not looting caches.",
+      "Harbormistress Vael tracks the most recently contested zone. Bait fights away from her to farm her safely.",
+      "Crowd control is especially valuable on the narrow beach — ranged classes with roots/snares excel here.",
+    ],
+  },
+  {
+    name: "Ghostlands Wastes",
+    region: "Southern Quel'Thalas",
+    type: "Free-for-All PvP Area",
+    description: "Void-corrupted stretches of the old Ghostlands where neither the Alliance nor Horde can claim authority. War Mode players of ALL factions compete for rare resources — including each other.",
+    objectives: [
+      { name: "Void Crystal Extraction", description: "Mine corrupted crystals from nodes. Carrying 10+ makes you visible on the zone map to all War Mode players.", icon: "&#9672;" },
+      { name: "Relic Hunting", description: "Scan ruins for ancient Sin'dorei relics using the provided tracker. High-tier relics require defeating the guardian mob first.", icon: "&#9734;" },
+      { name: "Dark Portal Sealing", description: "Spawn at unpredictable intervals. Sealing one awards bonus honor and a temporary 5% stat boost that lasts 30 minutes.", icon: "&#9670;" },
+    ],
+    warModeBonus: "Void Crystal turn-ins grant double honor during the Ghostlands Hour (6pm–8pm server time).",
+    tips: [
+      "Carrying 10+ crystals flags you on the map — always offload before hitting 10 unless you want a fight.",
+      "Relics respawn every 12 minutes. Mark guardian spawn points in your map notes for efficient farming.",
+      "The stat boost from portal sealing stacks with War Mode buff — seal one as a priority each session.",
+    ],
+  },
+]
+
+export const pvpBattlegrounds = [
+  {
+    name: "Warsong Gulch",
+    bracket: "10v10",
+    type: "Capture the Flag",
+    icon: "&#9873;",
+    timeLimit: "25 minutes",
+    winCondition: "Capture the enemy flag 3 times",
+    description: "The classic Warsong conflict returns with updated terrain. Rolling hills and tunnel routes between the two bases give attackers and defenders plenty of angles to contest.",
+    roles: {
+      attackers: "Fast, self-sustaining specs that can survive while carrying — Demon Hunter, Guardian Druid, and Death Knight are premier flag carriers.",
+      defenders: "Sticky melee with strong peel and roots. Frost Mage and Arms Warrior can zone flag rooms effectively.",
+      midfield: "Teams that win the midfield skirmish effectively cut the enemy return route. Burst specs excel at picking off enemy return defenders.",
+    },
+    objectives: [
+      { name: "Flag Capture", points: "+1 score", description: "Deliver the enemy flag to your base while your own flag is present." },
+      { name: "Flag Return", points: "Resets enemy progress", description: "Returning your own flag while the enemy carries it denies them the cap." },
+      { name: "Flag Pickup Speed", points: "Tie-breaker", description: "If time expires and scores are tied, the flag is scored for whichever team holds the enemy flag." },
+    ],
+    tips: [
+      "Trinket immediately on stuns while carrying — a 2-second root mid-bridge is often fatal.",
+      "Call incomings to the base early. 3+ incomings means peel, not chase.",
+      "Speed boost at midfield nodes resets every 45 seconds — controlling them is a second win condition.",
+      "Enemy healer in the flag room? Focus them before the carrier arrives.",
+    ],
+    rewards: ["Warsong Honor gear", "Warsong Veteran Title (2500 wins)", "Gulch Sabercat mount (seasonal)"],
+  },
+  {
+    name: "Silvermoon Siege",
+    bracket: "15v15",
+    type: "Assault & Defend",
+    icon: "&#9876;",
+    timeLimit: "30 minutes",
+    winCondition: "Assault team breaches all 3 gates within the time limit, or defenders hold until time expires",
+    description: "A brand-new battleground set in the lower districts of Silvermoon City. One team assaults through progressively tougher gates while the defending team falls back to stronger positions each phase.",
+    roles: {
+      attackers: "High burst and AoE to clear defenders from gates. Destruction Warlock and Fire Mage can pressure gate health directly.",
+      defenders: "Healing sustain becomes more critical as phases advance. Restoration Druid and Holy Paladin anchor the defensive line.",
+      siege: "Two players on each team can man arcane siege engines. Prioritize capturing these at phase start.",
+    },
+    objectives: [
+      { name: "Gate Breach", points: "+1 phase", description: "Destroy a gate by reducing its ward HP to zero. Each gate has increased HP from the last." },
+      { name: "Siege Engine Control", points: "+20% damage to gates", description: "Captured engines deal persistent area damage while manned. Unmount engineers to recapture them." },
+      { name: "Inner Courtyard (Phase 3)", points: "Win condition", description: "The final objective. Attackers must hold the courtyard for 60 seconds uncontested." },
+    ],
+    tips: [
+      "Attackers: converge before each gate push — trickle deaths stall momentum and gates regen while uncontested.",
+      "Defenders: slow the phase timer by breaking attacker DPS assignments. Kill siege engineers first.",
+      "Phase 2 has a narrow chokepoint — AoE stuns win or lose the engagement here.",
+      "The inner courtyard has LoS pillars — use them to break siege engine targeting.",
+    ],
+    rewards: ["Siege-Forged Honor gear", "Silvermoon Defender's Tabard", "Siege Champion Title (100 wins as defender)"],
+  },
+  {
+    name: "Alterac Valley",
+    bracket: "40v40",
+    type: "Battlefield",
+    icon: "&#9670;",
+    timeLimit: "90 minutes",
+    winCondition: "Reduce the enemy reinforcement counter to 0, or defeat the enemy commander",
+    description: "The iconic 40-player battlefield returns. Towers, graveyards, and commander kills all drain enemy reinforcements in this large-scale war of attrition.",
+    roles: {
+      attackers: "Rush spec groups excel at rapid tower capture — coordination is everything at this scale.",
+      defenders: "Graveyard defense requires strong CC and grounding totems.",
+      commander: "Tanking Drek'Thar or Vanndar requires awareness of their Marshal summoning phases.",
+    },
+    objectives: [
+      { name: "Graveyard Capture", points: "-5 enemy reinforcements", description: "Captured graveyards become your respawn point and cut enemy reinforcement lines." },
+      { name: "Tower Destruction", points: "-75 enemy reinforcements", description: "Destroying a tower permanently removes the reinforcement bonus it provided." },
+      { name: "Commander Kill", points: "Instant win", description: "Kill the enemy faction commander. Each surviving tower buffs the commander — clear towers first." },
+      { name: "Cavalry Reinforcements", points: "Variable", description: "Elite cavalry available if you control the stable nodes in the eastern valley." },
+    ],
+    tips: [
+      "The classic tower-rush strategy: split 15 players to hold graveyards while 25 push towers.",
+      "Each enemy tower standing adds a buff stack to the commander. Clearing all 4 before engaging is often faster.",
+      "Control the Stonehearth Graveyard early — losing it splits your team's respawn route.",
+      "Druids in travel form are the best graveyard runners due to speed.",
+    ],
+    rewards: ["Alterac Valley Veteran gear", "Frostwolf/Ram PvP mounts", "Field Marshal title (top 5% seasonal rating)"],
+  },
+  {
+    name: "Eye of the Storm",
+    bracket: "10v10",
+    type: "Resource Race + Flag",
+    icon: "&#9728;",
+    timeLimit: "20 minutes",
+    winCondition: "First team to 1600 points wins",
+    description: "Four towers on a floating Netherstorm platform, with a flag at the center. Holding towers generates points, and capturing the flag with towers held is a massive accelerator.",
+    roles: {
+      attackers: "Mobile melee and teleport specs thrive. Enhancement Shaman and Outlaw Rogue excel.",
+      defenders: "Ranged with knockbacks have a massive advantage — pushing enemies off the platform is an elimination.",
+      flag: "Flag carriers need high mobility to avoid knockbacks at the center.",
+    },
+    objectives: [
+      { name: "Tower Control", points: "1–4 pts/tick depending on towers held", description: "Each tower held accelerates your points per tick. Holding 3+ towers is usually decisive." },
+      { name: "Flag Capture", points: "+100 pts per cap (scaled to towers held)", description: "Capturing the flag while holding 3 towers awards 100 pts. Holding 1 tower awards 35 pts." },
+    ],
+    tips: [
+      "Never abandon a tower to chase the flag unless you hold 3 or more already.",
+      "Assign one player to grab the flag while the rest fight at center.",
+      "Knockback abilities (Typhoon, Thunderclap) are high-value on the narrow platform.",
+      "The 3-tower + flag tick rate wins games faster than 4-tower ignoring the flag.",
+    ],
+    rewards: ["Eye of the Storm Honor gear", "Stormrider's Tabard", "Nether Drake skin variant (seasonal)"],
+  },
+]
+
+export const pvpArena = {
+  overview: "Arena pits small premade teams against each other in closed, neutral combat arenas. Midnight Season 1 features two active brackets, four maps, and a Conquest currency system.",
+  season: "Season 1 — The Midnight Opening",
+  conquestCap: "1,500 Conquest per week, scaling to 2,250 at 2400+ rating",
+  formats: [
+    {
+      bracket: "2v2",
+      description: "The most mechanically demanding bracket. No raid frames overhead — every decision is visible and punishable. Rising to 2400 here is considered by many a greater achievement than 3v3 at the same rating.",
+      topComps: [
+        { name: "Melee Cleave", specs: "Arms Warrior + Holy Paladin", style: "Tunnel pressure. Use mortal strike debuff on healer focus targets, offensively dispel HoTs.", wincon: "Force the enemy healer to burn mana through relentless switching. Win in dampening if not before." },
+        { name: "Mage/Rogue (Shatter)", specs: "Frost Mage + Subtlety Rogue", style: "Deep freeze into shatter combos. Rogue sets up procs with kidney shot chains.", wincon: "One-shot windows off Kidney + Frozen Orb. Must secure a kill in the opener or the game becomes uphill in dampening." },
+        { name: "Beastcleave", specs: "Enhancement Shaman + Beast Mastery Hunter", style: "Sustained pressure with interrupt chains and Windfury synergy.", wincon: "Overwhelming passive damage through pets and totems. Excels in mid-length games." },
+        { name: "Mistweaver/DH", specs: "Mistweaver Monk + Havoc Demon Hunter", style: "Aggressive healer — Mistweaver creates pressure while DH peels and bursts.", wincon: "Offensive casts from healer create confusion in opponent's target priorities." },
+      ],
+      tips: [
+        "Dampening starts at 10% and increases 1% per 10 seconds. Compositions with sustained damage become stronger late.",
+        "Trinket tracking is the single highest-value habit to develop. Never commit a CC chain without tracking enemy trinkets.",
+        "The Lordaeron Arena map favors ranged — learn to break LoS aggressively on this map.",
+        "Recording games and reviewing the first 10 seconds of each loss is more valuable than an hour of play.",
+      ],
+    },
+    {
+      bracket: "3v3",
+      description: "The flagship competitive bracket. Full team coordination, deep comp theory, and map awareness combine. Season 1 ladder rewards at 2400, 2700, and Gladiator (top 0.5%).",
+      topComps: [
+        { name: "Jungle Cleave", specs: "Balance Druid + Feral Druid + Resto Druid", style: "All Druid. Overwhelming mobility and shapeshifting CD stacking. Nearly immune to interrupt setups.", wincon: "Sustained pressure through shifting forms. Opponents can't lock out all three Druids at once." },
+        { name: "Turbo Cleave", specs: "Arms Warrior + Enhancement Shaman + Healer", style: "Relentless melee pressure. Windfury procs reward the Warrior. Purge-heavy.", wincon: "Drive healer out of mana through continuous switches and Wind Shear chains." },
+        { name: "RMP", specs: "Subtlety Rogue + Frost Mage + Discipline Priest", style: "Choreographed CC into coordinated kill windows. Every global matters.", wincon: "Deep Freeze + Cheapshot + Psychic Scream landing simultaneously creates an unkillable burst window." },
+        { name: "Shadowplay", specs: "Shadow Priest + Affliction Warlock + Healer", style: "Layered DoT pressure with overlapping CC from two schools. Mana drain is a secondary win condition.", wincon: "Force trinkets with psychic horror/fear overlap, then burst during the CC window." },
+        { name: "Godcomp", specs: "Fire Mage + Shadow Priest + Restoration Druid", style: "High sustained DPS from two specs, both capable of kill pressure. Druid provides strong mobile healing.", wincon: "Mage combustion into shadow crash on the same target for instant-kill burst windows." },
+      ],
+      tips: [
+        "Call targets verbally or with keybinds, not in team chat. Delays cost windows.",
+        "DR resets after 18 seconds. Track CC DRs on both enemies to land kill windows cleanly.",
+        "Targeting the healer with pressure forces them to self-heal, reducing their output on teammates.",
+        "Learn Blade's Edge Arena wall positioning — it's a legitimate high-skill tool.",
+        "At high rating, slowing your rotation by 0.5 seconds to read the enemy is a net positive.",
+      ],
+    },
+  ],
+  maps: [
+    { name: "Nagrand Arena", description: "Open circular arena with four pillars. Favors mobile melee cleaves due to limited LoS." },
+    { name: "Blade's Edge Arena", description: "Raised platform with narrow walkways. Knockbacks are lethal here." },
+    { name: "Ruins of Lordaeron", description: "Classic asymmetrical map. Pillars in the center create strong LoS for casters." },
+    { name: "Tol'viron Arena", description: "Egyptian-themed enclosed arena. Tight corridors amplify AoE and cleave damage." },
+  ],
+  ratings: [
+    { threshold: 1400, reward: "Combatant", color: "#9ca3af" },
+    { threshold: 1600, reward: "Challenger", color: "#60a5fa" },
+    { threshold: 1800, reward: "Rival", color: "#34d399" },
+    { threshold: 2100, reward: "Duelist", color: "#c9a227" },
+    { threshold: 2400, reward: "Elite", color: "#f87171" },
+    { threshold: 2700, reward: "Gladiator", color: "#e879f9" },
+  ],
+}

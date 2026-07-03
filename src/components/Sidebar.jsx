@@ -13,6 +13,7 @@ const navItems = [
   { path: '/addons', label: 'Addons', icon: '&#9881;' },
   { path: '/expansions', label: 'Past Expansions', icon: '&#9775;' },
   { path: '/wow-token', label: 'WoW Token', icon: '&#9672;' },
+  { path: '/pvp', label: 'PvP', icon: '&#9876;' },
   { path: '/features', label: 'Features', icon: '&#9830;' },
   { path: '/lore', label: 'Lore', icon: '&#9733;' },
 ]

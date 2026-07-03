@@ -29,6 +29,7 @@ export default function Header({ onMenuToggle, theme, onThemeToggle }) {
           <Link to="/addons">Addons</Link>
           <Link to="/expansions">Expansions</Link>
           <Link to="/wow-token">WoW Token</Link>
+          <Link to="/pvp">PvP</Link>
           <Link to="/features">Features</Link>
           <Link to="/lore">Lore</Link>
         </nav>

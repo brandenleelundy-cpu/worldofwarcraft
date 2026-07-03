@@ -15,6 +15,7 @@ import Expansions from './pages/Expansions'
 import WoWToken from './pages/WoWToken'
 import PvP from './pages/PvP'
 import RareItems from './pages/RareItems'
+import Tutorials from './pages/Tutorials'
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="wow-token" element={<WoWToken />} />
         <Route path="pvp" element={<PvP />} />
         <Route path="rare-items" element={<RareItems />} />
+        <Route path="tutorials" element={<Tutorials />} />
       </Route>
     </Routes>
   )

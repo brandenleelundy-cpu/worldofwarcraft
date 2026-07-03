@@ -15,6 +15,7 @@ const navItems = [
   { path: '/wow-token', label: 'WoW Token', icon: '&#9672;' },
   { path: '/pvp', label: 'PvP', icon: '&#9876;' },
   { path: '/rare-items', label: 'Rare Items', icon: '&#9830;' },
+  { path: '/tutorials', label: 'Tutorials', icon: '&#9733;' },
   { path: '/features', label: 'Features', icon: '&#9830;' },
   { path: '/lore', label: 'Lore', icon: '&#9733;' },
 ]

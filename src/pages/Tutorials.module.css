@@ -1,0 +1,450 @@
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+/* Sidebar */
+
+.sidebar {
+  position: sticky;
+  top: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.catBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid transparent;
+  background: var(--color-bg-card);
+  text-align: left;
+  transition: all var(--transition-fast);
+  color: var(--color-text-muted);
+}
+
+.catBtn:hover {
+  background: var(--color-bg-card-hover);
+  color: var(--color-text-secondary);
+}
+
+.catBtnActive {
+  background: var(--color-bg-card-hover) !important;
+}
+
+.catIcon {
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  width: 18px;
+  text-align: center;
+}
+
+.catInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.catName {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.catCount {
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+}
+
+.sidebarNote {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.noteIcon {
+  color: var(--color-gold-dim);
+  font-size: 0.55rem;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.sidebarNote p {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Content area */
+
+.content {
+  min-width: 0;
+}
+
+.categoryHeader {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-gold);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.categoryTitleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+}
+
+.categoryTitle {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.categoryCount {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  padding: 2px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  background: var(--color-bg-tertiary);
+}
+
+.categoryDesc {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* Tutorial list */
+
+.tutorialList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.card:hover {
+  border-color: color-mix(in srgb, var(--cat-color) 35%, transparent);
+}
+
+.cardOpen {
+  border-color: color-mix(in srgb, var(--cat-color) 45%, transparent);
+}
+
+.cardHeader {
+  width: 100%;
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  text-align: left;
+  color: var(--color-text-primary);
+  transition: background var(--transition-fast);
+}
+
+.cardHeader:hover {
+  background: var(--color-bg-card-hover);
+}
+
+.cardOpen .cardHeader {
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-card-hover);
+}
+
+.cardLeft {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.cardTitleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 0.975rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.cardBadges {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.diffBadge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.timeBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  padding: 2px 8px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.cardSummary {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  margin-top: 2px;
+}
+
+.cardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.tag {
+  font-size: 0.6rem;
+  padding: 1px 7px;
+  background: rgba(201, 162, 39, 0.07);
+  border: 1px solid rgba(201, 162, 39, 0.15);
+  border-radius: 100px;
+  color: var(--color-gold-light);
+}
+
+.cardRight {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.stepCount {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  padding: 2px 8px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.chevron {
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+}
+
+/* Expanded body */
+
+.cardBody {
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  animation: slideIn 180ms ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sectionLabel {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Steps */
+
+.stepsSection {}
+
+.stepsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.step {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+}
+
+.step:hover {
+  border-color: color-mix(in srgb, var(--cat-color) 30%, transparent);
+}
+
+.stepNum {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.stepTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}
+
+.stepDesc {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* Tips */
+
+.tipsSection {}
+
+.tipsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: color-mix(in srgb, var(--cat-color) 4%, var(--color-bg-tertiary));
+  border: 1px solid color-mix(in srgb, var(--cat-color) 20%, transparent);
+  border-radius: var(--radius-md);
+}
+
+.tip {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  padding-left: var(--spacing-md);
+  position: relative;
+}
+
+.tip::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--cat-color, var(--color-gold-dim));
+  font-weight: 700;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 190px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: var(--spacing-xs);
+    gap: 4px;
+  }
+
+  .catBtn {
+    white-space: nowrap;
+    min-width: fit-content;
+    border-left-width: 1px;
+    border-bottom: 3px solid transparent;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .catBtnActive {
+    border-bottom-color: currentColor !important;
+    border-left-color: var(--color-border) !important;
+  }
+
+  .catInfo {
+    flex-direction: row;
+    gap: var(--spacing-xs);
+    align-items: center;
+  }
+
+  .catCount {
+    display: none;
+  }
+
+  .sidebarNote {
+    display: none;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .cardRight {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-self: auto;
+  }
+}

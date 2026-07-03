@@ -3,21 +3,21 @@ import styles from './Sidebar.module.css'
 
 const navItems = [
   { path: '/', label: 'Overview', icon: '&#9670;' },
-  { path: '/zones', label: 'Zones', icon: '&#9675;' },
-  { path: '/races', label: 'Races', icon: '&#9734;' },
-  { path: '/characters', label: 'Characters', icon: '&#9824;' },
-  { path: '/raids', label: 'Raid Strategies', icon: '&#9876;' },
-  { path: '/mythic-plus', label: 'Mythic+', icon: '&#9883;' },
-  { path: '/quests', label: 'Quests', icon: '&#9902;' },
-  { path: '/delves', label: 'Delves', icon: '&#9649;' },
   { path: '/addons', label: 'Addons', icon: '&#9881;' },
+  { path: '/characters', label: 'Characters', icon: '&#9824;' },
+  { path: '/delves', label: 'Delves', icon: '&#9649;' },
   { path: '/expansions', label: 'Past Expansions', icon: '&#9775;' },
-  { path: '/wow-token', label: 'WoW Token', icon: '&#9672;' },
-  { path: '/pvp', label: 'PvP', icon: '&#9876;' },
-  { path: '/rare-items', label: 'Rare Items', icon: '&#9830;' },
-  { path: '/tutorials', label: 'Tutorials', icon: '&#9733;' },
   { path: '/features', label: 'Features', icon: '&#9830;' },
   { path: '/lore', label: 'Lore', icon: '&#9733;' },
+  { path: '/mythic-plus', label: 'Mythic+', icon: '&#9883;' },
+  { path: '/pvp', label: 'PvP', icon: '&#9876;' },
+  { path: '/quests', label: 'Quests', icon: '&#9902;' },
+  { path: '/races', label: 'Races', icon: '&#9734;' },
+  { path: '/raids', label: 'Raid Strategies', icon: '&#9876;' },
+  { path: '/rare-items', label: 'Rare Items', icon: '&#9830;' },
+  { path: '/tutorials', label: 'Tutorials', icon: '&#9733;' },
+  { path: '/wow-token', label: 'WoW Token', icon: '&#9672;' },
+  { path: '/zones', label: 'Zones', icon: '&#9675;' },
 ]
 
 export default function Sidebar({ open, onClose }) {

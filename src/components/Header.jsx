@@ -19,21 +19,21 @@ export default function Header({ onMenuToggle, theme, onThemeToggle }) {
           <span className={styles.logoText}>Midnight Wiki</span>
         </Link>
         <nav className={styles.nav}>
-          <Link to="/zones">Zones</Link>
-          <Link to="/races">Races</Link>
-          <Link to="/characters">Characters</Link>
-          <Link to="/raids">Raids</Link>
-          <Link to="/mythic-plus">Mythic+</Link>
-          <Link to="/quests">Quests</Link>
-          <Link to="/delves">Delves</Link>
           <Link to="/addons">Addons</Link>
+          <Link to="/characters">Characters</Link>
+          <Link to="/delves">Delves</Link>
           <Link to="/expansions">Expansions</Link>
-          <Link to="/wow-token">WoW Token</Link>
-          <Link to="/pvp">PvP</Link>
-          <Link to="/rare-items">Rare Items</Link>
-          <Link to="/tutorials">Tutorials</Link>
           <Link to="/features">Features</Link>
           <Link to="/lore">Lore</Link>
+          <Link to="/mythic-plus">Mythic+</Link>
+          <Link to="/pvp">PvP</Link>
+          <Link to="/quests">Quests</Link>
+          <Link to="/races">Races</Link>
+          <Link to="/raids">Raids</Link>
+          <Link to="/rare-items">Rare Items</Link>
+          <Link to="/tutorials">Tutorials</Link>
+          <Link to="/wow-token">WoW Token</Link>
+          <Link to="/zones">Zones</Link>
         </nav>
         <button
           className={styles.themeBtn}

@@ -1,0 +1,448 @@
+.affixSection {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.affixGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.affixCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  transition: border-color var(--transition-fast);
+}
+
+.affixCard:hover {
+  border-color: var(--color-gold-dim);
+}
+
+.affixHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xs);
+}
+
+.affixName {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+}
+
+.affixLevel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-gold-light);
+  background: rgba(201, 162, 39, 0.1);
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+.affixDesc {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.dungeonSection {
+  margin-bottom: var(--spacing-xl);
+}
+
+.dungeonGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.dungeonCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  text-align: left;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.dungeonCard:hover {
+  border-color: var(--color-gold-dim);
+  transform: translateY(-2px);
+}
+
+.dungeonCard.selected {
+  border-color: var(--color-gold-light);
+  background: var(--color-bg-card-hover);
+  box-shadow: 0 0 0 1px var(--color-gold-dim);
+}
+
+.dungeonCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-sm);
+}
+
+.diffBadge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+.easy {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+.medium {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.hard {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+}
+
+.veryHard {
+  color: #c084fc;
+  background: rgba(192, 132, 252, 0.1);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+}
+
+.timer {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono, monospace);
+}
+
+.dungeonName {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.dungeonZone {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.dungeonMeta {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+}
+
+.detailSection {
+  margin-top: var(--spacing-xl);
+  animation: fadeIn 300ms ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.detail {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+}
+
+.detailHeader {
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.detailTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.detailDesc {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.routeSection,
+.tipsSection {
+  margin-bottom: var(--spacing-xl);
+}
+
+.subsectionTitle {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-gold-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-sm);
+}
+
+.routeText {
+  font-size: 0.825rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  padding-left: var(--spacing-md);
+  border-left: 2px solid var(--color-gold-dim);
+}
+
+.tipsList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.tip {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  padding-left: var(--spacing-md);
+  position: relative;
+}
+
+.tip::before {
+  content: '\25C6';
+  position: absolute;
+  left: 0;
+  color: var(--color-gold-dim);
+  font-size: 0.5rem;
+  top: 0.35em;
+}
+
+.bossSection {
+  margin-top: var(--spacing-lg);
+}
+
+.bossList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.bossItem {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.bossHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-lg);
+  color: var(--color-text-primary);
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+
+.bossHeader:hover {
+  background: var(--color-bg-card-hover);
+}
+
+.bossHeader.bossExpanded {
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-card-hover);
+}
+
+.bossLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.bossNum {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-gold-dim);
+  width: 24px;
+}
+
+.bossName {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.bossChevron {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+}
+
+.bossStrategy {
+  padding: var(--spacing-lg);
+  animation: fadeIn 200ms ease;
+}
+
+.bossStrategy p {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .affixGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dungeonGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .videoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.videoSection {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.videoLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-gold-light);
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.videoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--spacing-sm);
+}
+
+.videoCard {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.videoCard:hover {
+  border-color: var(--color-gold-dim);
+  transform: translateY(-1px);
+}
+
+.videoCard:hover .playBtn {
+  background: rgba(201, 162, 39, 0.95);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.videoThumb {
+  position: relative;
+  width: 100%;
+  padding-top: 50%;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.videoThumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 40% 50%, rgba(201, 162, 39, 0.06) 0%, transparent 60%);
+}
+
+.playBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(201, 162, 39, 0.85);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.videoDur {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-family: var(--font-mono, monospace);
+}
+
+.videoMeta {
+  padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+.videoType {
+  font-size: 0.55rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-gold-light);
+  background: rgba(201, 162, 39, 0.08);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.videoTitle {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-top: 4px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: block;
+}
+
+.videoCreator {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+  display: block;
+}

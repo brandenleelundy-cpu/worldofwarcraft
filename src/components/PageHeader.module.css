@@ -1,0 +1,35 @@
+.header {
+  margin-bottom: var(--spacing-2xl);
+  position: relative;
+}
+
+.accentLine {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+  margin-bottom: var(--spacing-md);
+  border-radius: 2px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+.accent {
+  display: inline-block;
+  margin-top: var(--spacing-sm);
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}

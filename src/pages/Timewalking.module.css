@@ -1,0 +1,761 @@
+/* Active event banner */
+
+.activeBanner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-xl);
+  background: color-mix(in srgb, var(--exp-color) 8%, var(--color-bg-card));
+  border: 1px solid color-mix(in srgb, var(--exp-color) 35%, transparent);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.activePulse {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--exp-color);
+  box-shadow: 0 0 10px var(--exp-color);
+}
+
+.activeBannerContent {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.activeLive {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 100px;
+  background: rgba(74, 222, 128, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  color: #4ade80;
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+.activeName {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.activeEnds {
+  font-size: 0.775rem;
+  color: var(--color-text-muted);
+}
+
+.activeViewBtn {
+  flex-shrink: 0;
+  padding: 6px var(--spacing-md);
+  background: transparent;
+  border: 1px solid;
+  border-radius: var(--radius-sm);
+  font-size: 0.775rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.activeViewBtn:hover {
+  background: color-mix(in srgb, var(--exp-color) 12%, transparent);
+}
+
+/* Mechanics grid */
+
+.mechanicsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.mechCard {
+  display: flex;
+  gap: var(--spacing-md);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+}
+
+.mechIcon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.mechTitle {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 3px;
+}
+
+.mechDesc {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+}
+
+/* Expansion selector */
+
+.expSelector {
+  margin-bottom: var(--spacing-xl);
+}
+
+.selectorLabel {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-sm);
+}
+
+.expGrid {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.expBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px var(--spacing-md);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: 0.775rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.expBtn:hover {
+  border-color: var(--exp-color);
+  color: var(--color-text-secondary);
+}
+
+.expBtnActive {
+  border-color: var(--exp-color) !important;
+  background: color-mix(in srgb, var(--exp-color) 10%, transparent) !important;
+  color: var(--exp-color) !important;
+  font-weight: 600;
+}
+
+.expColorDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--exp-color);
+  flex-shrink: 0;
+}
+
+.expBtnName {
+  white-space: nowrap;
+}
+
+.expStatus {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.expStatus_active {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.expStatus_upcoming {
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.08);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+}
+
+.expStatus_past {
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid var(--color-border);
+}
+
+/* Expansion detail panel */
+
+.expDetail {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--exp-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  animation: fadeIn 180ms ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.expHeaderLeft {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  flex: 1;
+}
+
+.expHeaderBadges {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.statusLive {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: 100px;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  color: #4ade80;
+  animation: pulse 2s ease infinite;
+}
+
+.statusUpcoming {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 100px;
+  background: rgba(96, 165, 250, 0.08);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  color: #60a5fa;
+}
+
+.expYear {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg-tertiary);
+  padding: 2px 7px;
+  border-radius: 100px;
+  border: 1px solid var(--color-border);
+}
+
+.expTitle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--exp-color);
+}
+
+.expDesc {
+  font-size: 0.83rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  max-width: 560px;
+}
+
+.expMetaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+.expMetaItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.expMetaLabel {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.expMetaDivider {
+  width: 1px;
+  height: 14px;
+  background: var(--color-border);
+}
+
+.expStats {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.expStat {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  min-width: 60px;
+}
+
+.expStatNum {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.expStatLabel {
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+/* Tab bar */
+
+.tabBar {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--color-border);
+  padding: 0 var(--spacing-xl);
+}
+
+.tabBtn {
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.tabBtn:hover {
+  color: var(--color-text-secondary);
+}
+
+.tabBtnActive {
+  color: var(--exp-color) !important;
+  border-bottom-color: var(--exp-color) !important;
+  font-weight: 600;
+}
+
+.tabContent {
+  padding: var(--spacing-xl);
+}
+
+.tabHint {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+  font-style: italic;
+}
+
+/* Dungeon list */
+
+.dungeonList {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.dungeonRow {
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.dungeonRowOpen {
+  border-color: var(--exp-color) !important;
+}
+
+.dungeonBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+
+.dungeonBtn:hover {
+  background: var(--color-bg-card-hover);
+}
+
+.dungeonNum {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--exp-color);
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.dungeonInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+}
+
+.dungeonName {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dungeonLocation {
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+}
+
+.dungeonMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
+}
+
+.dungeonBosses {
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.diffBadge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 2px 7px;
+  border-radius: 100px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.dungeonChevron {
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.dungeonTip {
+  padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md) calc(18px + var(--spacing-md) + var(--spacing-md));
+  border-top: 1px solid var(--color-border);
+  animation: slideDown 150ms ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tipLabel {
+  display: block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--exp-color);
+  margin-bottom: 4px;
+}
+
+.dungeonTip p {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Raid tab */
+
+.raidCard {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--exp-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.raidHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+}
+
+.raidTag {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--exp-color);
+  margin-bottom: 4px;
+}
+
+.raidName {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.raidLocation {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.raidStats {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+.raidStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.raidStatNum {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.raidStatBadge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 100px;
+  border: 1px solid;
+}
+
+.raidStatLabel {
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.raidDesc {
+  font-size: 0.83rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+.raidHighlight {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(201, 162, 39, 0.07);
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  border-radius: var(--radius-sm);
+}
+
+.raidHighlightLabel {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-gold-light);
+  white-space: nowrap;
+}
+
+.raidHighlightItem {
+  font-size: 0.8rem;
+  color: var(--color-gold-light);
+  font-weight: 600;
+}
+
+.emptyRaid {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-lg);
+}
+
+/* Rewards tab */
+
+.rewardsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rewardRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.rewardRow:hover {
+  background: var(--color-bg-card-hover);
+}
+
+.rewardLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex: 1;
+  min-width: 0;
+}
+
+.rewardType {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 2px 7px;
+  border-radius: 100px;
+  border: 1px solid;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rewardName {
+  font-size: 0.82rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.rewardSpecial {
+  font-size: 0.65rem;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  padding: 1px 6px;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.rewardCost {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rewardFree {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+.rewardsNote {
+  margin-top: var(--spacing-lg);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-bg-tertiary);
+  border-left: 2px solid var(--color-border);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  line-height: 1.5;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+  .expHeader {
+    flex-direction: column;
+  }
+
+  .expStats {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .mechanicsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .mechanicsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .tabBar {
+    padding: 0 var(--spacing-md);
+    overflow-x: auto;
+  }
+
+  .tabBtn {
+    padding: var(--spacing-md) var(--spacing-sm);
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  .dungeonMeta {
+    display: none;
+  }
+
+  .raidHeader {
+    flex-direction: column;
+  }
+}

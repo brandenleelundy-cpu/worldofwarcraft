@@ -29,6 +29,7 @@ export default function Header({ onMenuToggle, theme, onThemeToggle }) {
           <Link to="/mythic-plus">Mythic+</Link>
           <Link to="/pvp">PvP</Link>
           <Link to="/promotions">Promotions</Link>
+          <Link to="/timewalking">Timewalking</Link>
           <Link to="/quests">Quests</Link>
           <Link to="/races">Races</Link>
           <Link to="/raids">Raids</Link>

@@ -13,6 +13,7 @@ const navItems = [
   { path: '/mythic-plus', label: 'Mythic+', icon: '&#9883;' },
   { path: '/pvp', label: 'PvP', icon: '&#9876;' },
   { path: '/promotions', label: 'Sales & Promotions', icon: '&#9670;' },
+  { path: '/timewalking', label: 'Timewalking', icon: '&#8987;' },
   { path: '/quests', label: 'Quests', icon: '&#9902;' },
   { path: '/races', label: 'Races', icon: '&#9734;' },
   { path: '/raids', label: 'Raid Strategies', icon: '&#9876;' },

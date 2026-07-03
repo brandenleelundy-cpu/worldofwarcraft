@@ -20,6 +20,7 @@ import Realms from './pages/Realms'
 import Dungeons from './pages/Dungeons'
 import Talents from './pages/Talents'
 import Promotions from './pages/Promotions'
+import Timewalking from './pages/Timewalking'
 
 export default function App() {
   return (
@@ -41,6 +42,7 @@ export default function App() {
         <Route path="wow-token" element={<WoWToken />} />
         <Route path="pvp" element={<PvP />} />
         <Route path="promotions" element={<Promotions />} />
+        <Route path="timewalking" element={<Timewalking />} />
         <Route path="rare-items" element={<RareItems />} />
         <Route path="tutorials" element={<Tutorials />} />
         <Route path="realms" element={<Realms />} />

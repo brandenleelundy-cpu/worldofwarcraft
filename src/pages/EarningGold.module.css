@@ -433,18 +433,173 @@
 
 /* Advice section */
 
-.adviceSection {
-  margin-top: var(--spacing-xl);
+.sectionBlock {
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--color-border);
 }
 
-.adviceTitle {
+.sectionTitle {
   font-family: var(--font-display);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
-  color: var(--color-text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.sectionDesc {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
   margin-bottom: var(--spacing-lg);
+  max-width: 720px;
+}
+
+/* Beginner path timeline */
+
+.pathTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pathStep {
+  display: flex;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-fast);
+}
+
+.pathStep:hover {
+  border-color: var(--color-gold-dim);
+}
+
+.pathStepNum {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(201, 162, 39, 0.12);
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  color: var(--color-gold-light);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pathStepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.pathStepTitle {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.pathStepDesc {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.pathMilestone {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  margin-top: 2px;
+}
+
+/* Weekly routine */
+
+.weekGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dayCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.dayName {
+  font-family: var(--font-display);
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.dayTasks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dayTask {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.taskPriority {
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 6px;
+  border-radius: 100px;
+  flex-shrink: 0;
+}
+
+.priority_high {
+  background: rgba(248, 113, 113, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.priority_medium {
+  background: rgba(251, 146, 60, 0.1);
+  color: #fb923c;
+  border: 1px solid rgba(251, 146, 60, 0.25);
+}
+
+.priority_low {
+  background: rgba(148, 163, 184, 0.1);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.taskText {
+  flex: 1;
+  min-width: 0;
+}
+
+.taskGold {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .adviceGrid {

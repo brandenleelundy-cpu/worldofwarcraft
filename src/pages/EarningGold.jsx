@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import PageHeader from '../components/PageHeader'
-import { goldMethods } from '../data/wikiData'
+import { goldMethods, goldWeeklyRoutine, goldBeginnerPath } from '../data/wikiData'
 import styles from './EarningGold.module.css'
 
 const CATEGORIES = [
@@ -243,9 +243,57 @@ export default function EarningGold() {
         </div>
       )}
 
+      {/* Beginner Path */}
+      <div className={styles.sectionBlock}>
+        <h3 className={styles.sectionTitle}>Beginner Path — From Zero to Token</h3>
+        <p className={styles.sectionDesc}>
+          A step-by-step progression for new gold-makers. Follow these milestones in order to build
+          a sustainable gold income from scratch.
+        </p>
+        <div className={styles.pathTimeline}>
+          {goldBeginnerPath.map(step => (
+            <div key={step.step} className={styles.pathStep}>
+              <div className={styles.pathStepNum}>{step.step}</div>
+              <div className={styles.pathStepContent}>
+                <span className={styles.pathStepTitle}>{step.title}</span>
+                <p className={styles.pathStepDesc}>{step.description}</p>
+                <span className={styles.pathMilestone}>Milestone: {step.milestone}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Weekly Routine */}
+      <div className={styles.sectionBlock}>
+        <h3 className={styles.sectionTitle}>Optimal Weekly Routine</h3>
+        <p className={styles.sectionDesc}>
+          A structured schedule to maximize gold across the week. Adapt based on your available playtime —
+          even completing the "high" priority tasks alone generates 20,000–50,000g weekly.
+        </p>
+        <div className={styles.weekGrid}>
+          {goldWeeklyRoutine.map(day => (
+            <div key={day.day} className={styles.dayCard}>
+              <span className={styles.dayName}>{day.day}</span>
+              <ul className={styles.dayTasks}>
+                {day.tasks.map((t, i) => (
+                  <li key={i} className={styles.dayTask}>
+                    <span className={`${styles.taskPriority} ${styles['priority_' + t.priority]}`}>
+                      {t.priority}
+                    </span>
+                    <span className={styles.taskText}>{t.task}</span>
+                    <span className={styles.taskGold}>{t.gold}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* General advice footer */}
-      <div className={styles.adviceSection}>
-        <h3 className={styles.adviceTitle}>General Principles</h3>
+      <div className={styles.sectionBlock}>
+        <h3 className={styles.sectionTitle}>General Principles</h3>
         <div className={styles.adviceGrid}>
           <div className={styles.adviceCard}>
             <span className={styles.adviceHead}>Diversify Your Income</span>
@@ -262,6 +310,14 @@ export default function EarningGold() {
           <div className={styles.adviceCard}>
             <span className={styles.adviceHead}>Use Multiple Characters</span>
             <p>Each character can complete treasures, world quests, and Callings independently. Even two well-maintained alts can double your passive weekly income with only 30 minutes of additional play time.</p>
+          </div>
+          <div className={styles.adviceCard}>
+            <span className={styles.adviceHead}>Understand Opportunity Cost</span>
+            <p>Not every gold method is worth your time. If you can earn 10,000g/hr crafting but choose to farm 3,000g/hr mobs, you are losing 7,000g per hour. Always compare methods against your personal best before investing time.</p>
+          </div>
+          <div className={styles.adviceCard}>
+            <span className={styles.adviceHead}>Patience Over Speed</span>
+            <p>The wealthiest players in WoW built capital over months, not days. Transmog flipping, pet markets, and AH speculation all compound over time. Set weekly income targets and track progress rather than chasing one-time windfalls.</p>
           </div>
         </div>
       </div>
